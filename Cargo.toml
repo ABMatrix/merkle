@@ -9,7 +9,7 @@ serialization = { git = "https://github.com/chainx-org/bitcoin-rust", default-fe
 sr-std = { git = "https://github.com/chainx-org/sr-std", default-features = false }
 primitives = { git = "https://github.com/chainx-org/bitcoin-rust", default-features = false }
 chain = { git = "https://github.com/chainx-org/bitcoin-rust", default-features = false }
-bit-vec = "0.5.0"
+bit-vec = { git = "https://github.com/chainx-org/bit-vec", default-features = false }
 
 [features]
 default = ["std"]
