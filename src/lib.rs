@@ -6,8 +6,9 @@ extern crate chain;
 extern crate bit_vec;
 extern crate primitives;
 extern crate sr_std as rstd;
+extern crate parity_codec as codec;
 
-use self::ser::{Serializable, Deserializable, Stream, Reader};
+use self::ser::{deserialize, serialize, Serializable, Deserializable, Stream, Reader};
 use self::chain::merkle_node_hash;
 use self::bit_vec::BitVec;
 use self::primitives::hash::H256;
@@ -74,6 +75,24 @@ impl Deserializable for PartialMerkleTree {
                 )
             },
         })
+    }
+}
+
+impl codec::Encode for PartialMerkleTree {
+    fn encode(&self) -> Vec<u8> {
+        let value = serialize::<PartialMerkleTree>(&self);
+        value.encode()
+    }
+}
+
+impl codec::Decode for PartialMerkleTree {
+    fn decode<I: codec::Input>(input: &mut I) -> Option<Self> {
+        let value: Vec<u8> = codec::Decode::decode(input).unwrap();
+        if let Ok(tree) = deserialize(Reader::new(&value)) {
+            Some(tree)
+        } else {
+            None
+        }
     }
 }
 
