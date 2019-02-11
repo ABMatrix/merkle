@@ -10,7 +10,7 @@ sr-std = { git = "https://github.com/chainx-org/sr-std", default-features = fals
 primitives = { git = "https://github.com/chainx-org/bitcoin-rust", default-features = false }
 chain = { git = "https://github.com/chainx-org/bitcoin-rust", default-features = false }
 bit-vec = { git = "https://github.com/chainx-org/bit-vec", default-features = false }
-parity-codec = { version = "2.0", default-features = false }
+parity-codec = { version = "3.0", default-features = false }
 
 [features]
 default = ["std"]
