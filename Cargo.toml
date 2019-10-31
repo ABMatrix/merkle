@@ -5,10 +5,10 @@ authors = ["Chainpool <http://chainx.org>"]
 edition = "2018"
 
 [dependencies]
-serialization = { git = "https://github.com/chainx-org/bitcoin-rust", default-features = false }
+serialization = { git = "https://github.com/ABMatrix/bitcoin-rust", default-features = false }
 sr-std = { git = "https://github.com/chainx-org/sr-std", default-features = false }
-primitives = { git = "https://github.com/chainx-org/bitcoin-rust", default-features = false }
-chain = { git = "https://github.com/chainx-org/bitcoin-rust", default-features = false }
+primitives = { git = "https://github.com/ABMatrix/bitcoin-rust", default-features = false }
+chain = { git = "https://github.com/ABMatrix/bitcoin-rust", default-features = false }
 bit-vec = { git = "https://github.com/ABMatrix/bit-vec", default-features = false }
 parity-codec = { version = "3.0", default-features = false }
 
