@@ -15,10 +15,10 @@ use self::primitives::hash::H256;
 use self::primitives::io;
 use self::rstd::cmp::min;
 use self::rstd::prelude::Vec;
+#[macro_use]
+use parity_scale_codec::{ Encode, Decode,  };
 
 /// Partial merkle tree
-#[cfg_attr(feature = "std", derive(Debug))]
-#[derive(PartialEq, Clone)]
 pub struct PartialMerkleTree {
     /// Total number of transactions
     pub tx_count: u32,

@@ -6,11 +6,16 @@ edition = "2018"
 
 [dependencies]
 serialization = { git = "https://github.com/ABMatrix/bitcoin-rust", default-features = false }
-sr-std = { git = "https://github.com/chainx-org/sr-std", default-features = false }
+sr-std = { git = "https://github.com/paritytech/substrate", default-features = false }
 primitives = { git = "https://github.com/ABMatrix/bitcoin-rust", default-features = false }
 chain = { git = "https://github.com/ABMatrix/bitcoin-rust", default-features = false }
 bit-vec = { git = "https://github.com/ABMatrix/bit-vec", default-features = false }
 parity-codec = { version = "3.0", default-features = false }
+
+[dependencies.parity-scale-codec]
+version = "1.0.6"
+default-features = false
+features = ["derive"]
 
 [features]
 default = ["std"]
@@ -21,4 +26,5 @@ std = [
      "primitives/std",
      "chain/std",
      "bit-vec/std",
+     "parity-codec/std",
 ]
