@@ -19,6 +19,7 @@ use self::rstd::prelude::Vec;
 use parity_scale_codec::{ Encode, Decode,  };
 
 /// Partial merkle tree
+#[derive(PartialEq, Clone, Default)]
 pub struct PartialMerkleTree {
     /// Total number of transactions
     pub tx_count: u32,
